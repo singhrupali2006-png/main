@@ -452,3 +452,40 @@ class CustomGradientButton extends StatelessWidget {
 ![Exp 6a Output](assets/outputs/exp6a_custom_widgets.svg)
 
 ---
+
+## Exp 6(b): Themes and Custom Styling
+
+### 🎯 Objective
+Establish an application-wide design system utilizing Material 3 `ThemeData`, seed colors, custom component themes (`ElevatedButtonThemeData`, `CardTheme`), and a runtime dynamic Light/Dark mode switcher.
+
+### 🛠️ Key Concepts
+- **`ThemeData` & Material 3**: Generates a tonal palette of 30+ accessible semantic color tokens (surface, onSurface, primaryContainer) derived from a single `colorSchemeSeed`.
+- **Dynamic Theme Mode**: `ThemeMode.system`, `ThemeMode.light`, or `ThemeMode.dark` toggled via `setState()`.
+- **Inherited Theme Context**: Accessing styles programmatically via `Theme.of(context).colorScheme.primary` ensures automatic repainting upon mode alteration.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp6_custom_styling/exp6b_themes_styling.dart`](lib/experiments/exp6_custom_styling/exp6b_themes_styling.dart)
+
+```dart
+// Snippet: Material 3 Theming Setup
+MaterialApp(
+  themeMode: _themeMode,
+  theme: ThemeData(
+    useMaterial3: true,
+    brightness: Brightness.light,
+    colorSchemeSeed: Colors.deepPurple,
+  ),
+  darkTheme: ThemeData(
+    useMaterial3: true,
+    brightness: Brightness.dark,
+    colorSchemeSeed: Colors.deepPurple,
+    scaffoldBackgroundColor: const Color(0xFF0F172A),
+  ),
+  home: const ThemesHomeScreen(),
+);
+```
+
+### 🌐 Output Preview
+![Exp 6b Output](assets/outputs/exp6b_themes.svg)
+
+---
