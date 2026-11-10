@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 530" width="100%" height="100%">
+  <defs>
+    <linearGradient id="exp10bHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="exp10bShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect x="20" y="15" width="810" height="500" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  
+  <!-- Browser Chrome Header -->
+  <path d="M 20 25 Q 20 15 30 15 L 820 15 Q 830 15 830 25 L 830 52 L 20 52 Z" fill="#e2e8f0" />
+  <circle cx="44" cy="34" r="6" fill="#ef4444" />
+  <circle cx="64" cy="34" r="6" fill="#f59e0b" />
+  <circle cx="84" cy="34" r="6" fill="#10b981" />
+  
+  <!-- URL Bar -->
+  <rect x="180" y="24" width="480" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="420" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569" text-anchor="middle">
+    🔒 http://127.0.0.1:9100/#/inspector?uri=http://127.0.0.1:54321
+  </text>
+
+  <!-- DevTools Top Bar -->
+  <rect x="20" y="52" width="810" height="46" fill="url(#exp10bHeaderGrad)" />
+  <text x="50" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#38bdf8">
+    🛠️ Flutter DevTools 2.37.2 • Widget Inspector &amp; Diagnostics Suite (Exp 10b)
+  </text>
+
+  <!-- DevTools Navigation Tabs -->
+  <g font-family="-apple-system, sans-serif" font-size="11" font-weight="bold">
+    <rect x="520" y="62" width="70" height="26" rx="4" fill="#0284c7" />
+    <text x="555" y="79" fill="#ffffff" text-anchor="middle">Inspector</text>
+    <text x="625" y="79" fill="#94a3b8">Timeline</text>
+    <text x="685" y="79" fill="#94a3b8">Memory</text>
+    <text x="745" y="79" fill="#94a3b8">Network</text>
+  </g>
+
+  <!-- Left: DOM / Widget Hierarchy Tree -->
+  <g filter="url(#exp10bShadow)">
+    <rect x="50" y="115" width="340" height="375" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="50" y="115" width="340" height="32" rx="12" fill="#f1f5f9"/>
+    <text x="68" y="136" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#334155">Widget Tree Inspector</text>
+
+    <!-- Tree nodes -->
+    <g font-family="Consolas, monospace" font-size="11" xml:space="preserve">
+      <text x="68" y="170" fill="#64748b">▼ MaterialApp</text>
+      <text x="85" y="192" fill="#64748b">  ▼ Scaffold</text>
+      <text x="102" y="214" fill="#64748b">    ▼ AppBar</text>
+      <text x="102" y="236" fill="#64748b">    ▼ Center</text>
+      <text x="119" y="258" fill="#64748b">      ▼ SingleChildScrollView</text>
+      <text x="136" y="280" fill="#0284c7" font-weight="bold">        ▼ Row (Fixed Flex)</text>
+      <rect x="145" y="290" width="220" height="24" rx="4" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1"/>
+      <text x="155" y="306" fill="#0369a1" font-weight="bold">          ● Expanded (Resolved)</text>
+      <text x="172" y="332" fill="#64748b">            Text("Wrapped...")</text>
+      <text x="136" y="354" fill="#64748b">        ▼ Card</text>
+      <text x="153" y="376" fill="#64748b">          ▼ NullSafeUserView</text>
+    </g>
+
+    <rect x="68" y="420" width="300" height="55" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="80" y="440" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#0f172a">Flex Layout Constraints:</text>
+    <text x="80" y="460" font-family="Consolas, monospace" font-size="10" fill="#16a34a">w: 0.0 &lt;= w &lt;= 600.0 | Flex: 1 | Bounded</text>
+  </g>
+
+  <!-- Right: Issue Diagnostics & Resolution Pane -->
+  <g filter="url(#exp10bShadow)">
+    <rect x="410" y="115" width="390" height="375" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="410" y="115" width="390" height="32" rx="12" fill="#f1f5f9"/>
+    <text x="430" y="136" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#334155">Issue Resolution &amp; Diagnostics</text>
+
+    <!-- Bug 1 Resolution Box -->
+    <rect x="430" y="160" width="350" height="135" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+    <circle cx="452" cy="182" r="10" fill="#22c55e" />
+    <text x="452" y="186" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle">✓</text>
+    <text x="472" y="186" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#15803d">
+      Fixed: RenderFlex Overflow Error
+    </text>
+    <text x="445" y="210" font-family="-apple-system, sans-serif" font-size="11" fill="#475569">
+      Root Cause: Unbounded horizontal text forced width past viewport.
+    </text>
+    <rect x="445" y="222" width="320" height="34" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="455" y="243" font-family="Consolas, monospace" font-size="10.5" fill="#0f172a">
+      Row(children: [Icon(), Expanded(child: Text())])
+    </text>
+    <text x="445" y="280" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#15803d">
+      Status: 0 overflow warnings logged. Bounded layout.
+    </text>
+
+    <!-- Bug 2 Resolution Box -->
+    <rect x="430" y="310" width="350" height="135" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+    <circle cx="452" cy="332" r="10" fill="#22c55e" />
+    <text x="452" y="336" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle">✓</text>
+    <text x="472" y="336" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#15803d">
+      Fixed: Null Check Operator Crash
+    </text>
+    <text x="445" y="360" font-family="-apple-system, sans-serif" font-size="11" fill="#475569">
+      Root Cause: Invoking user! on uninitialized nullable object.
+    </text>
+    <rect x="445" y="372" width="320" height="34" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="455" y="393" font-family="Consolas, monospace" font-size="10.5" fill="#0f172a">
+      Text('User: ${user ?? "Guest (Safe Fallback)"}')
+    </text>
+    <text x="445" y="430" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#15803d">
+      Status: Graceful fallback active. 100% crash-free.
+    </text>
+
+    <text x="605" y="472" font-family="Consolas, monospace" font-size="10" fill="#64748b" text-anchor="middle">
+      debugPrint('[FLUTTER DIAGNOSTIC] All layout issues resolved')
+    </text>
+  </g>
+</svg>

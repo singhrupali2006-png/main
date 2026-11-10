@@ -1,0 +1,11 @@
+{
+  "name": "Flutter Lab Experiments (20 Modules)",
+  "short_name": "FlutterLab",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0175C2",
+  "theme_color": "#0175C2",
+  "description": "Comprehensive Flutter & Dart 10 Experiments (20 Modules) Showcase",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false
+}
