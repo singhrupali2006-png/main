@@ -362,3 +362,42 @@ Widget build(BuildContext context) {
 ![Exp 5a Output](assets/outputs/exp5a_stateful.svg)
 
 ---
+
+## Exp 5(b): State Management with setState and Provider
+
+### 🎯 Objective
+Contrast local ephemeral widget state management (`setState`) against global scalable state management utilizing `ChangeNotifier` and the `provider` package. Build a reactive shopping cart store that propagates updates across disparate subtree components.
+
+### 🛠️ Key Concepts
+- **Ephemeral State (`setState`)**: Suitable for self-contained UI state (e.g. current tab selection, checkbox toggle, animations). Does not scale across disconnected routes.
+- **App State (`Provider`)**: Decouples business logic into an observable domain model (`class CartNotifier extends ChangeNotifier`).
+- **`ChangeNotifierProvider`**: Injects models down the widget tree using `InheritedWidget` semantics without manual prop-drilling.
+- **`Consumer<T>` & `context.read<T>()`**: `Consumer` re-renders only its immediate descendant tree when `notifyListeners()` fires, avoiding expensive root redraws.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp5_state_management/exp5b_provider_state.dart`](lib/experiments/exp5_state_management/exp5b_provider_state.dart)
+
+```dart
+// Snippet: ChangeNotifier Store and Consumer Usage
+class CartNotifier extends ChangeNotifier {
+  final List<ProductItem> _items = [];
+  int get itemCount => _items.length;
+
+  void addItem(ProductItem item) {
+    _items.add(item);
+    notifyListeners(); // Broadcasts updates to all active Consumers
+  }
+}
+
+// In Widget Tree:
+Consumer<CartNotifier>(
+  builder: (context, cart, child) {
+    return Text('Cart: ${cart.itemCount} items');
+  },
+);
+```
+
+### 🌐 Output Preview
+![Exp 5b Output](assets/outputs/exp5b_provider.svg)
+
+---
