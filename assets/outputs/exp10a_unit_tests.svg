@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="exp10aBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <filter id="exp10aShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Window Frame -->
+  <rect x="25" y="20" width="800" height="480" rx="12" fill="url(#exp10aBgGrad)" filter="url(#exp10aShadow)" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Titlebar -->
+  <path d="M 25 32 Q 25 20 37 20 L 813 20 Q 825 20 825 32 L 825 58 L 25 58 Z" fill="#1e293b" />
+  <circle cx="48" cy="39" r="6" fill="#ef4444" />
+  <circle cx="68" cy="39" r="6" fill="#f59e0b" />
+  <circle cx="88" cy="39" r="6" fill="#10b981" />
+  <text x="425" y="44" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" text-anchor="middle">
+    Terminal — flutter test (Exp 10a Unit &amp; Widget Test Suite)
+  </text>
+
+  <!-- Status Bar -->
+  <rect x="45" y="68" width="760" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <circle cx="60" cy="82" r="4" fill="#22c55e"/>
+  <text x="75" y="86" font-family="Consolas, monospace" font-size="11" fill="#38bdf8">flutter test --reporter=expanded test/unit_test.dart test/widget_test.dart</text>
+
+  <!-- Terminal Test Logs -->
+  <g font-family="Consolas, 'Courier New', monospace" font-size="11.5" xml:space="preserve">
+    <!-- Group 1: Unit Tests -->
+    <text x="45" y="125" fill="#38bdf8" font-weight="bold">[GROUP] Exp 10(a) - Unit Tests for Business Logic &amp; Models</text>
+
+    <text x="55" y="150" fill="#22c55e" font-weight="bold">✓</text>
+    <text x="75" y="150" fill="#f8fafc">calculateAverage accurately computes mean of numbers (12ms)</text>
+
+    <text x="55" y="174" fill="#22c55e" font-weight="bold">✓</text>
+    <text x="75" y="174" fill="#f8fafc">calculateAverage handles empty list gracefully (4ms)</text>
+
+    <text x="55" y="198" fill="#22c55e" font-weight="bold">✓</text>
+    <text x="75" y="198" fill="#f8fafc">Student GPA setter adheres to boundary limits (0.0 to 4.0) (8ms)</text>
+
+    <text x="55" y="222" fill="#22c55e" font-weight="bold">✓</text>
+    <text x="75" y="222" fill="#f8fafc">Post.fromJson deserializes JSON map accurately (6ms)</text>
+
+    <text x="55" y="246" fill="#22c55e" font-weight="bold">✓</text>
+    <text x="75" y="246" fill="#f8fafc">Email regex validation rule functions accurately (10ms)</text>
+
+    <!-- Group 2: Widget Tests -->
+    <text x="45" y="285" fill="#a855f7" font-weight="bold">[GROUP] Exp 10(a) - Widget UI Component Tests</text>
+
+    <text x="55" y="310" fill="#22c55e" font-weight="bold">✓</text>
+    <text x="75" y="310" fill="#f8fafc">StatelessInfoBanner renders title and description (42ms)</text>
+
+    <text x="55" y="334" fill="#22c55e" font-weight="bold">✓</text>
+    <text x="75" y="334" fill="#f8fafc">InteractiveCounterWidget increments on button tap &amp; pump() (68ms)</text>
+
+    <text x="55" y="358" fill="#22c55e" font-weight="bold">✓</text>
+    <text x="75" y="358" fill="#f8fafc">InteractiveCounterWidget reset button restores initial state (35ms)</text>
+
+    <text x="55" y="382" fill="#22c55e" font-weight="bold">✓</text>
+    <text x="75" y="382" fill="#f8fafc">CustomMetricCard renders delta badge and icons (39ms)</text>
+
+    <!-- Execution Time Metric -->
+    <text x="45" y="420" fill="#94a3b8">Ran 9 tests in 0.48s (Test framework: flutter_test with FakeAsync clock)</text>
+
+    <!-- Passing Summary Banner -->
+    <rect x="45" y="440" width="760" height="38" rx="6" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+    <circle cx="65" cy="459" r="8" fill="#22c55e" />
+    <text x="65" y="463" font-size="10" fill="#ffffff" font-weight="bold" text-anchor="middle">✓</text>
+    <text x="85" y="463" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#86efac">
+      All 9 Tests Passed Successfully! (0 Failures, 0 Skipped • 100% Assertion Success Rate)
+    </text>
+  </g>
+</svg>

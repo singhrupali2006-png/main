@@ -722,3 +722,37 @@ FutureBuilder<List<Post>>(
 ![Exp 9b Output](assets/outputs/exp9b_api_ui.svg)
 
 ---
+
+## Exp 10(a): Unit Tests for UI Components
+
+### 🎯 Objective
+Write automated unit tests and widget tests using `flutter_test`, validating business logic algorithms, JSON model deserialization schemas, regex form validators, and asserting UI widget element lifecycles via `WidgetTester`, `pumpWidget()`, and `find.byType`.
+
+### 🛠️ Key Concepts
+- **Unit Testing**: Tests isolated functions and models (`test('calculateAverage ...')`) without starting a full graphic pipeline.
+- **Widget Testing (`testWidgets`)**: Runs inside a headless test environment (`FakeAsync`) providing virtual frame dispatching.
+- **`WidgetTester.pump()` & `pumpAndSettle()`**: Advances the virtual clock to trigger state invalidation and await microtasks or transition completions.
+- **Finders & Matchers**: `find.text('...')`, `find.byIcon(...)`, `expect(..., findsOneWidget)`.
+
+### 💻 Dart Source Code Reference
+Files: [`test/unit_test.dart`](test/unit_test.dart) • [`test/widget_test.dart`](test/widget_test.dart)
+
+```dart
+// Snippet: Widget Test with Tap and State Verification
+testWidgets('InteractiveCounterWidget increments upon tap', (WidgetTester tester) async {
+  await tester.pumpWidget(const MaterialApp(home: Scaffold(body: InteractiveCounterWidget(initialValue: 10))));
+
+  expect(find.text('10'), findsOneWidget);
+
+  // Tap +1 increment button
+  await tester.tap(find.widgetWithText(ElevatedButton, '+1'));
+  await tester.pump(); // Advance virtual clock
+
+  expect(find.text('11'), findsOneWidget);
+});
+```
+
+### 🌐 Output Preview
+![Exp 10a Output](assets/outputs/exp10a_unit_tests.svg)
+
+---
