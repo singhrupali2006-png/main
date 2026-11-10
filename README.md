@@ -328,3 +328,37 @@ MaterialApp(
 ![Exp 4b Output](assets/outputs/exp4b_named_routes.svg)
 
 ---
+
+## Exp 5(a): StatelessWidget and StatefulWidget
+
+### 🎯 Objective
+Create a cohesive Flutter screen featuring both `StatelessWidget` and `StatefulWidget` architectures. Implement interactive buttons that manipulate internal state values and demonstrate how `setState()` triggers widget subtree rebuilds.
+
+### 🛠️ Key Concepts
+- **`StatelessWidget`**: Immutable component with no mutable state across rebuilds (`const StatelessInfoBanner(...)`).
+- **`StatefulWidget` & `State<T>`**: Separates the immutable widget definition from its persistent `State` lifecycle object.
+- **`setState(() { ... })`**: Marks the widget's `Element` as dirty and schedules a repaint/rebuild with the new state variables.
+- **Lifecycle Methods**: `initState()`, `build()`, and `dispose()`.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp5_state_management/exp5a_stateful_stateless.dart`](lib/experiments/exp5_state_management/exp5a_stateful_stateless.dart)
+
+```dart
+// Snippet: setState() triggering dynamic UI updates
+void _modifyValue(int delta) {
+  setState(() {
+    _counter += (delta * _step);
+    _rebuildCount++;
+  });
+}
+
+@override
+Widget build(BuildContext context) {
+  return Text('$_counter', style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold));
+}
+```
+
+### 🌐 Output Preview
+![Exp 5a Output](assets/outputs/exp5a_stateful.svg)
+
+---
