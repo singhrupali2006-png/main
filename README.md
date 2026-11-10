@@ -92,3 +92,46 @@ class Student extends Person with LoggerMixin {
 ![Exp 1b Output](assets/outputs/exp1b_dart_basics.svg)
 
 ---
+
+## Exp 2(a): Explore Flutter Widgets (Text, Image, Container)
+
+### 🎯 Objective
+Explore foundational visual building blocks in Flutter: `Text` typography with rich text spans, `Image` asset and network loading with error/placeholder builders, and `Container` styling using `BoxDecoration`, borders, gradients, and elevation shadows.
+
+### 🛠️ Key Concepts
+- **`Container`**: Convenience widget combining padding, margins, borders, background gradients, constraints, and matrix transformations.
+- **`BoxDecoration`**: Encapsulates painting instructions including `LinearGradient`, `BorderRadius`, `BoxShadow`, and `Border`.
+- **`Text` & `RichText`**: Flexible text rendering with inline spans (`TextSpan`), custom letter spacing, shadows, and overflow handling (`TextOverflow.ellipsis`).
+- **`Image` & Clipping**: Network asset fetching with graceful `loadingBuilder`, `errorBuilder`, and shape clipping via `ClipRRect` and `CircleAvatar`.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp2_widgets_layouts/exp2a_widgets.dart`](lib/experiments/exp2_widgets_layouts/exp2a_widgets.dart)
+
+```dart
+// Snippet: Decorated Container with ClipRRect and RichText
+Container(
+  padding: const EdgeInsets.all(20.0),
+  decoration: BoxDecoration(
+    gradient: const LinearGradient(colors: [Color(0xFF3B82F6), Color(0xFF1D4ED8)]),
+    borderRadius: BorderRadius.circular(16.0),
+    boxShadow: [BoxShadow(color: Colors.blue.withOpacity(0.3), blurRadius: 15, offset: const Offset(0, 8))],
+  ),
+  child: Row(
+    children: [
+      ClipRRect(
+        borderRadius: BorderRadius.circular(14.0),
+        child: Image.network('https://picsum.photos/seed/flutter2a/200', fit: BoxFit.cover),
+      ),
+      const SizedBox(width: 20),
+      Expanded(
+        child: Text('Container & RichText Showcase', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+      ),
+    ],
+  ),
+);
+```
+
+### 🌐 Output Preview
+![Exp 2a Output](assets/outputs/exp2a_widgets.svg)
+
+---

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="exp2aHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#3730a3" />
+    </linearGradient>
+    <linearGradient id="exp2aBannerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <filter id="exp2aShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect x="20" y="15" width="810" height="490" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  
+  <!-- Browser Chrome Header -->
+  <path d="M 20 25 Q 20 15 30 15 L 820 15 Q 830 15 830 25 L 830 52 L 20 52 Z" fill="#e2e8f0" />
+  <circle cx="44" cy="34" r="6" fill="#ef4444" />
+  <circle cx="64" cy="34" r="6" fill="#f59e0b" />
+  <circle cx="84" cy="34" r="6" fill="#10b981" />
+  
+  <!-- URL Bar -->
+  <rect x="180" y="24" width="480" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="420" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569" text-anchor="middle">
+    🔒 http://localhost:8080/#/exp2a-widgets
+  </text>
+
+  <!-- Flutter App Bar -->
+  <rect x="20" y="52" width="810" height="48" fill="url(#exp2aHeaderGrad)" />
+  <text x="50" y="82" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#ffffff">
+    Exp 2(a): Core Flutter Widgets (Text, Image, Container)
+  </text>
+
+  <!-- Main Canvas Container -->
+  <!-- Banner Container Widget -->
+  <g filter="url(#exp2aShadow)">
+    <rect x="70" y="120" width="710" height="110" rx="16" fill="url(#exp2aBannerGrad)" stroke="#60a5fa" stroke-width="1"/>
+    
+    <!-- Image Box -->
+    <rect x="95" y="135" width="80" height="80" rx="12" fill="#ffffff" fill-opacity="0.2"/>
+    <circle cx="135" cy="165" r="22" fill="#93c5fd" />
+    <polygon points="120,185 150,185 145,170 130,170" fill="#2563eb" />
+    <circle cx="145" cy="155" r="5" fill="#fef08a" />
+    
+    <!-- Text Inside Banner -->
+    <text x="195" y="160" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">
+      Container &amp; RichText Showcase
+    </text>
+    <text x="195" y="185" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#e2e8f0">
+      Styling with <tspan fill="#fde047" font-weight="bold">BoxDecoration</tspan>, linear gradients, drop-shadows, and clipped images.
+    </text>
+    <text x="195" y="205" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" fill="#bfdbfe">
+      Border radius: 16px • Elevation: 15px blur • Edge padding: 20px
+    </text>
+  </g>
+
+  <!-- Typography Card -->
+  <g filter="url(#exp2aShadow)">
+    <rect x="70" y="250" width="710" height="100" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="95" y="278" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="bold" fill="#1e293b">
+      Typography &amp; Text Variations
+    </text>
+    <line x1="95" y1="290" x2="755" y2="290" stroke="#f1f5f9" stroke-width="1.5" />
+    <text x="95" y="312" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="600" fill="#4338ca" text-decoration="underline">
+      Headline Medium with Underline Style &amp; Custom Letter Spacing
+    </text>
+    <text x="95" y="332" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" fill="#64748b">
+      Body text demonstrating overflow trimming with ellipsis when content exceeds maximum allowed viewport boundaries...
+    </text>
+  </g>
+
+  <!-- Image Variations Row Card -->
+  <g filter="url(#exp2aShadow)">
+    <rect x="70" y="370" width="710" height="110" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Item 1: CircleAvatar -->
+    <circle cx="180" cy="415" r="30" fill="#e0e7ff" />
+    <circle cx="180" cy="408" r="10" fill="#4f46e5" />
+    <path d="M 165 432 A 15 15 0 0 1 195 432 Z" fill="#4f46e5" />
+    <text x="180" y="462" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">CircleAvatar</text>
+
+    <!-- Item 2: ClipOval -->
+    <ellipse cx="425" cy="415" rx="30" ry="30" fill="#ccfbf1" />
+    <polygon points="415,405 435,405 440,425 410,425" fill="#0d9488" />
+    <circle cx="425" cy="415" r="5" fill="#ffffff" />
+    <text x="425" y="462" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">ClipOval Image</text>
+
+    <!-- Item 3: Custom Decorated Container -->
+    <rect x="640" y="385" width="60" height="60" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+    <polygon points="660,405 680,410 670,430" fill="#ea580c" />
+    <text x="670" y="462" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">Custom Border</text>
+  </g>
+</svg>
