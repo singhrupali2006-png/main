@@ -177,3 +177,43 @@ Stack(
 ![Exp 2b Output](assets/outputs/exp2b_layouts.svg)
 
 ---
+
+## Exp 3(a): Responsive UI Design
+
+### 🎯 Objective
+Design a multi-device responsive user interface utilizing `LayoutBuilder` and constraint calculations to adapt layouts seamlessly between mobile (single column), tablet (two columns), and desktop/web viewports (three columns).
+
+### 🛠️ Key Concepts
+- **`LayoutBuilder`**: Provides parent `BoxConstraints` to calculate dynamic layout structures at runtime during widget layout phase.
+- **Adaptive Grid**: Dynamically sets `crossAxisCount` based on width breakpoints (`constraints.maxWidth >= 950 ? 3 : 2 : 1`).
+- **Flexible Dimensions**: Utilizes `mainAxisExtent` and flexible padding to prevent render overflows (`A RenderFlex overflowed by ... pixels`).
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp3_responsive/exp3a_responsive_ui.dart`](lib/experiments/exp3_responsive/exp3a_responsive_ui.dart)
+
+```dart
+// Snippet: Responsive Column Assignment with LayoutBuilder
+LayoutBuilder(
+  builder: (context, constraints) {
+    int crossAxisCount = 1;
+    if (constraints.maxWidth >= 950) {
+      crossAxisCount = 3;
+    } else if (constraints.maxWidth >= 600) {
+      crossAxisCount = 2;
+    }
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: crossAxisCount,
+        mainAxisExtent: 160,
+      ),
+      itemCount: items.length,
+      itemBuilder: (context, index) => MetricCard(item: items[index]),
+    );
+  },
+)
+```
+
+### 🌐 Output Preview
+![Exp 3a Output](assets/outputs/exp3a_responsive.svg)
+
+---
