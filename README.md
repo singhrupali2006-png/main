@@ -254,3 +254,40 @@ return Scaffold(
 ![Exp 3b Output](assets/outputs/exp3b_breakpoints.svg)
 
 ---
+
+## Exp 4(a): Navigation Between Screens (Navigator)
+
+### 🎯 Objective
+Configure imperative screen transitions using Flutter's `Navigator` stack architecture (`Navigator.push` and `Navigator.pop`), pass dynamic data parameters from a source route to a destination route, and handle return callbacks asynchronously using `await`.
+
+### 🛠️ Key Concepts
+- **Route Stack**: LIFO (Last-In-First-Out) stack structure managed by `NavigatorState`.
+- **`MaterialPageRoute`**: Platform-adaptive route that transitions with slide animations on iOS/Android and fade transitions on Web.
+- **Bi-Directional Data Transfer**:
+  - Arguments supplied directly via destination class constructors.
+  - Return data passed back via `Navigator.pop(context, result)` and handled in `final result = await Navigator.push(...)`.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp4_navigation/exp4a_navigator.dart`](lib/experiments/exp4_navigation/exp4a_navigator.dart)
+
+```dart
+// Snippet: Pushing Route and Awaiting Return Value
+final result = await Navigator.push<String>(
+  context,
+  MaterialPageRoute(
+    builder: (context) => const DetailScreen(
+      itemId: 'ITEM-9042',
+      itemName: 'Flutter Web Cloud Engine',
+      price: 49.99,
+    ),
+  ),
+);
+
+// Returning value inside DetailScreen:
+Navigator.pop(context, 'Confirmed Purchase of ITEM-9042');
+```
+
+### 🌐 Output Preview
+![Exp 4a Output](assets/outputs/exp4a_navigator.svg)
+
+---
