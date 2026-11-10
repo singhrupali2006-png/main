@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 530" width="100%" height="100%">
+  <defs>
+    <linearGradient id="exp8bHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4c1d95" />
+      <stop offset="100%" stop-color="#2e1065" />
+    </linearGradient>
+    <filter id="exp8bShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect x="20" y="15" width="810" height="500" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  
+  <!-- Browser Chrome Header -->
+  <path d="M 20 25 Q 20 15 30 15 L 820 15 Q 830 15 830 25 L 830 52 L 20 52 Z" fill="#e2e8f0" />
+  <circle cx="44" cy="34" r="6" fill="#ef4444" />
+  <circle cx="64" cy="34" r="6" fill="#f59e0b" />
+  <circle cx="84" cy="34" r="6" fill="#10b981" />
+  
+  <!-- URL Bar -->
+  <rect x="180" y="24" width="480" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="420" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569" text-anchor="middle">
+    🔒 http://localhost:8080/#/exp8b-fade-slide-transitions
+  </text>
+
+  <!-- Flutter App Bar -->
+  <rect x="20" y="52" width="810" height="46" fill="url(#exp8bHeaderGrad)" />
+  <text x="50" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#ffffff">
+    Exp 8(b): Multi-Type Animation Transitions (Fade, Slide, Scale, Rotation)
+  </text>
+
+  <!-- Header Banner Card -->
+  <g filter="url(#exp8bShadow)">
+    <rect x="50" y="112" width="750" height="50" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="75" y="142" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#0f172a">
+      Explicit Transition Matrix (Driven by AnimationController with Curves.easeOutBack)
+    </text>
+    <rect x="655" y="122" width="130" height="30" rx="6" fill="#6d28d9"/>
+    <text x="720" y="141" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      🔄 Replay Transitions
+    </text>
+  </g>
+
+  <!-- 2x2 Grid of Transitions -->
+  <!-- Card 1: FadeTransition -->
+  <g filter="url(#exp8bShadow)">
+    <rect x="50" y="178" width="360" height="150" rx="14" fill="#ffffff" stroke="#bfdbfe" stroke-width="1"/>
+    <rect x="185" y="195" width="90" height="65" rx="14" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <circle cx="230" cy="222" r="14" fill="#2563eb"/>
+    <text x="230" y="227" font-size="14" fill="#ffffff" text-anchor="middle">👁️</text>
+    <text x="230" y="250" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Fade In</text>
+    <text x="230" y="288" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">FadeTransition</text>
+    <text x="230" y="306" font-family="Consolas, monospace" font-size="11" fill="#64748b" text-anchor="middle">opacity: 0.1 ➔ 1.0</text>
+  </g>
+
+  <!-- Card 2: SlideTransition -->
+  <g filter="url(#exp8bShadow)">
+    <rect x="440" y="178" width="360" height="150" rx="14" fill="#ffffff" stroke="#99f6e4" stroke-width="1"/>
+    <rect x="575" y="195" width="90" height="65" rx="14" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+    <circle cx="620" cy="222" r="14" fill="#0f766e"/>
+    <text x="620" y="227" font-size="14" fill="#ffffff" text-anchor="middle">⬆️</text>
+    <text x="620" y="250" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold" fill="#0f766e" text-anchor="middle">Slide Up</text>
+    <text x="620" y="288" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">SlideTransition</text>
+    <text x="620" y="306" font-family="Consolas, monospace" font-size="11" fill="#64748b" text-anchor="middle">offset: (0, 0.4) ➔ (0, 0)</text>
+  </g>
+
+  <!-- Card 3: ScaleTransition -->
+  <g filter="url(#exp8bShadow)">
+    <rect x="50" y="342" width="360" height="150" rx="14" fill="#ffffff" stroke="#fde68a" stroke-width="1"/>
+    <rect x="185" y="358" width="90" height="65" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <circle cx="230" cy="385" r="14" fill="#b45309"/>
+    <text x="230" y="390" font-size="14" fill="#ffffff" text-anchor="middle">🔍</text>
+    <text x="230" y="413" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">Scale Up</text>
+    <text x="230" y="452" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">ScaleTransition</text>
+    <text x="230" y="470" font-family="Consolas, monospace" font-size="11" fill="#64748b" text-anchor="middle">scale: 0.6x ➔ 1.0x (Bounce)</text>
+  </g>
+
+  <!-- Card 4: RotationTransition -->
+  <g filter="url(#exp8bShadow)">
+    <rect x="440" y="342" width="360" height="150" rx="14" fill="#ffffff" stroke="#fbcfe8" stroke-width="1"/>
+    <rect x="575" y="358" width="90" height="65" rx="14" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+    <circle cx="620" cy="385" r="14" fill="#be185d"/>
+    <text x="620" y="390" font-size="14" fill="#ffffff" text-anchor="middle">🔄</text>
+    <text x="620" y="413" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold" fill="#9d174d" text-anchor="middle">Spin 360°</text>
+    <text x="620" y="452" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold" fill="#0f172a" text-anchor="middle">RotationTransition</text>
+    <text x="620" y="470" font-family="Consolas, monospace" font-size="11" fill="#64748b" text-anchor="middle">turns: 0.0 ➔ 1.0 turn</text>
+  </g>
+</svg>

@@ -601,3 +601,41 @@ AnimatedBuilder(
 ![Exp 8a Output](assets/outputs/exp8a_animation.svg)
 
 ---
+
+## Exp 8(b): Fade and Slide Transitions
+
+### 🎯 Objective
+Experiment with diverse core animation transition widgets: `FadeTransition`, `SlideTransition`, `ScaleTransition`, and `RotationTransition`, manipulating interpolation intervals and directional vectors across choreographed UI cards.
+
+### 🛠️ Key Concepts
+- **`FadeTransition`**: Animates the opacity of a child widget using `Animation<double>` bound between `0.0` and `1.0`.
+- **`SlideTransition`**: Translates a widget relative to its normal coordinate system using `Tween<Offset>`.
+- **`ScaleTransition` & `RotationTransition`**: Transforms visual scale factors and angular turns (`0.0` to `1.0` representing a complete $360^\circ$ circle).
+- **Composite Animation Sequences**: Running multiple tween streams against a single master `AnimationController`.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp8_animations/exp8b_fade_slide_animation.dart`](lib/experiments/exp8_animations/exp8b_fade_slide_animation.dart)
+
+```dart
+// Snippet: SlideTransition and FadeTransition Setup
+_slideAnimation = Tween<Offset>(
+  begin: const Offset(0.0, 0.4),
+  end: Offset.zero,
+).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutBack));
+
+_fadeAnimation = Tween<double>(begin: 0.1, end: 1.0).animate(_controller);
+
+// In Widget Tree:
+SlideTransition(
+  position: _slideAnimation,
+  child: FadeTransition(
+    opacity: _fadeAnimation,
+    child: MetricBadgeCard(),
+  ),
+);
+```
+
+### 🌐 Output Preview
+![Exp 8b Output](assets/outputs/exp8b_fade_slide.svg)
+
+---
