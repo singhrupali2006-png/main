@@ -684,3 +684,41 @@ Future<List<Post>> fetchPosts() async {
 ![Exp 9a Output](assets/outputs/exp9a_api_fetch.svg)
 
 ---
+
+## Exp 9(b): Display Fetched Data in the UI
+
+### 🎯 Objective
+Consume asynchronous streams and futures utilizing `FutureBuilder<List<Post>>` to build a reactive UI that smoothly renders distinct states: loading spinner, network error retry dialog, dynamic search filter, and list cards with pull-to-refresh (`RefreshIndicator`).
+
+### 🛠️ Key Concepts
+- **`FutureBuilder` Lifecycle**: Inspects `snapshot.connectionState` (none, waiting, active, done) and `snapshot.hasError` before accessing `snapshot.data`.
+- **`RefreshIndicator`**: Implements pull-to-refresh physics calling async refresh dispatchers.
+- **Client-Side Filtering**: Reactive substring search filtering without unnecessary network roundtrips.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp9_api/exp9b_api_ui.dart`](lib/experiments/exp9_api/exp9b_api_ui.dart)
+
+```dart
+// Snippet: FutureBuilder with ConnectionState Handling
+FutureBuilder<List<Post>>(
+  future: _postsFuture,
+  builder: (context, snapshot) {
+    if (snapshot.connectionState == ConnectionState.waiting) {
+      return const Center(child: CircularProgressIndicator());
+    }
+    if (snapshot.hasError) {
+      return Center(child: Text('Error: ${snapshot.error}'));
+    }
+    final posts = snapshot.data ?? [];
+    return ListView.builder(
+      itemCount: posts.length,
+      itemBuilder: (context, index) => PostCard(post: posts[index]),
+    );
+  },
+);
+```
+
+### 🌐 Output Preview
+![Exp 9b Output](assets/outputs/exp9b_api_ui.svg)
+
+---

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 530" width="100%" height="100%">
+  <defs>
+    <linearGradient id="exp9bHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#172554" />
+    </linearGradient>
+    <filter id="exp9bShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect x="20" y="15" width="810" height="500" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  
+  <!-- Browser Chrome Header -->
+  <path d="M 20 25 Q 20 15 30 15 L 820 15 Q 830 15 830 25 L 830 52 L 20 52 Z" fill="#e2e8f0" />
+  <circle cx="44" cy="34" r="6" fill="#ef4444" />
+  <circle cx="64" cy="34" r="6" fill="#f59e0b" />
+  <circle cx="84" cy="34" r="6" fill="#10b981" />
+  
+  <!-- URL Bar -->
+  <rect x="180" y="24" width="480" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="420" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569" text-anchor="middle">
+    🔒 http://localhost:8080/#/exp9b-api-ui
+  </text>
+
+  <!-- Flutter App Bar -->
+  <rect x="20" y="52" width="810" height="46" fill="url(#exp9bHeaderGrad)" />
+  <text x="50" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#ffffff">
+    Exp 9(b): Meaningful UI Presentation of REST Data with FutureBuilder
+  </text>
+  <circle cx="785" cy="75" r="14" fill="#1e40af" />
+  <text x="785" y="80" font-size="12" fill="#ffffff" text-anchor="middle">🔄</text>
+
+  <!-- Search Filter Input Box -->
+  <g filter="url(#exp9bShadow)">
+    <rect x="50" y="112" width="750" height="42" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="75" y="138" font-size="14" fill="#64748b">🔍</text>
+    <text x="100" y="138" font-family="-apple-system, sans-serif" font-size="12" fill="#0f172a">
+      Flutter
+    </text>
+    <circle cx="770" cy="133" r="8" fill="#e2e8f0" />
+    <text x="770" y="137" font-size="10" fill="#64748b" text-anchor="middle">✕</text>
+  </g>
+
+  <!-- FutureBuilder Rendered Card 1 -->
+  <g filter="url(#exp9bShadow)">
+    <rect x="50" y="170" width="750" height="95" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <circle cx="78" cy="195" r="14" fill="#dbeafe" />
+    <text x="78" y="200" font-family="Consolas, monospace" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">1</text>
+    <text x="105" y="200" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">
+      Exploring Flutter Web CanvasKit Engine
+    </text>
+    <text x="105" y="222" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b">
+      CanvasKit leverages Skia compiled to WebAssembly for pixel-perfect 60 FPS rendering on desktop &amp; mobile browsers.
+    </text>
+    <text x="710" y="248" font-family="-apple-system, sans-serif" font-size="11" fill="#0284c7" font-weight="bold">
+      👍 Like (24)   🔗 Share
+    </text>
+  </g>
+
+  <!-- FutureBuilder Rendered Card 2 -->
+  <g filter="url(#exp9bShadow)">
+    <rect x="50" y="280" width="750" height="95" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <circle cx="78" cy="305" r="14" fill="#dbeafe" />
+    <text x="78" y="310" font-family="Consolas, monospace" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">2</text>
+    <text x="105" y="310" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">
+      State Management with Provider and Riverpod
+    </text>
+    <text x="105" y="332" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b">
+      Decoupling business logic from UI hierarchies creates maintainable enterprise software in Flutter.
+    </text>
+    <text x="710" y="358" font-family="-apple-system, sans-serif" font-size="11" fill="#0284c7" font-weight="bold">
+      👍 Like (42)   🔗 Share
+    </text>
+  </g>
+
+  <!-- FutureBuilder Rendered Card 3 -->
+  <g filter="url(#exp9bShadow)">
+    <rect x="50" y="390" width="750" height="95" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <circle cx="78" cy="415" r="14" fill="#dbeafe" />
+    <text x="78" y="420" font-family="Consolas, monospace" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">3</text>
+    <text x="105" y="420" font-family="-apple-system, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">
+      Asynchronous Networking in Dart with FutureBuilder
+    </text>
+    <text x="105" y="442" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b">
+      FutureBuilder consumes asynchronous data streams and maps connection states cleanly into Flutter views.
+    </text>
+    <text x="710" y="468" font-family="-apple-system, sans-serif" font-size="11" fill="#0284c7" font-weight="bold">
+      👍 Like (19)   🔗 Share
+    </text>
+  </g>
+</svg>
