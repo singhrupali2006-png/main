@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 530" width="100%" height="100%">
+  <defs>
+    <linearGradient id="exp7bHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9f1239" />
+      <stop offset="100%" stop-color="#881337" />
+    </linearGradient>
+    <filter id="exp7bShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect x="20" y="15" width="810" height="500" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  
+  <!-- Browser Chrome Header -->
+  <path d="M 20 25 Q 20 15 30 15 L 820 15 Q 830 15 830 25 L 830 52 L 20 52 Z" fill="#e2e8f0" />
+  <circle cx="44" cy="34" r="6" fill="#ef4444" />
+  <circle cx="64" cy="34" r="6" fill="#f59e0b" />
+  <circle cx="84" cy="34" r="6" fill="#10b981" />
+  
+  <!-- URL Bar -->
+  <rect x="180" y="24" width="480" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="420" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569" text-anchor="middle">
+    🔒 http://localhost:8080/#/exp7b-form-validation
+  </text>
+
+  <!-- Flutter App Bar -->
+  <rect x="20" y="52" width="810" height="46" fill="url(#exp7bHeaderGrad)" />
+  <text x="50" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#ffffff">
+    Exp 7(b): Form Validation &amp; Error Handling Engine
+  </text>
+
+  <!-- Form Container Card -->
+  <g filter="url(#exp7bShadow)">
+    <rect x="145" y="115" width="560" height="380" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <text x="175" y="145" font-family="-apple-system, sans-serif" font-size="16" font-weight="bold" fill="#0f172a">
+      Secure Account Verification
+    </text>
+    <text x="175" y="162" font-family="-apple-system, sans-serif" font-size="11" fill="#64748b">
+      GlobalKey&lt;FormState&gt;.currentState!.validate() with Regex &amp; Inline Errors
+    </text>
+    <line x1="175" y1="172" x2="675" y2="172" stroke="#f1f5f9" stroke-width="1.5"/>
+
+    <!-- Valid Username Field -->
+    <rect x="175" y="185" width="500" height="42" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="195" y="211" font-family="-apple-system, sans-serif" font-size="12" fill="#15803d">
+      👤 Username: Rupali Singh
+    </text>
+    <circle cx="655" cy="206" r="9" fill="#dcfce7" />
+    <text x="655" y="210" font-size="10" fill="#15803d" font-weight="bold" text-anchor="middle">✓</text>
+
+    <!-- Invalid Email Field (With Error State) -->
+    <rect x="175" y="240" width="500" height="42" rx="6" fill="#fff1f2" stroke="#e11d48" stroke-width="1.5"/>
+    <text x="195" y="266" font-family="-apple-system, sans-serif" font-size="12" fill="#be123c">
+      ✉️ Email: invalid-email-format
+    </text>
+    <circle cx="655" cy="261" r="9" fill="#ffe4e6" />
+    <text x="655" y="265" font-size="10" fill="#e11d48" font-weight="bold" text-anchor="middle">✕</text>
+
+    <!-- Error Message Below Email -->
+    <text x="175" y="296" font-family="-apple-system, sans-serif" font-size="11" fill="#e11d48" font-weight="500">
+      ⚠ Please enter a valid email address (e.g. name@domain.com)
+    </text>
+
+    <!-- Password Field (Valid with Strength) -->
+    <rect x="175" y="310" width="500" height="42" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+    <text x="195" y="336" font-family="-apple-system, sans-serif" font-size="12" fill="#15803d">
+      🔒 Password: •••••••••
+    </text>
+    <circle cx="655" cy="331" r="9" fill="#dcfce7" />
+    <text x="655" y="335" font-size="10" fill="#15803d" font-weight="bold" text-anchor="middle">✓</text>
+    <text x="175" y="364" font-family="-apple-system, sans-serif" font-size="10.5" fill="#16a34a">
+      ✓ Meets complexity: Length &gt;= 8, digit included, symbol included.
+    </text>
+
+    <!-- Submit Button (Triggers Validation) -->
+    <rect x="175" y="385" width="500" height="42" rx="8" fill="#be123c"/>
+    <text x="425" y="411" font-family="-apple-system, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      Validate &amp; Submit Form
+    </text>
+
+    <!-- Error summary footer -->
+    <text x="425" y="445" font-family="Consolas, monospace" font-size="10" fill="#e11d48" text-anchor="middle">
+      _formKey.currentState!.validate() returned FALSE ➔ 1 field requires attention
+    </text>
+  </g>
+</svg>

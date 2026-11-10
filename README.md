@@ -526,3 +526,42 @@ Form(
 ![Exp 7a Output](assets/outputs/exp7a_form_inputs.svg)
 
 ---
+
+## Exp 7(b): Form Validation and Error Handling
+
+### 🎯 Objective
+Implement client-side validation logic using `GlobalKey<FormState>`, enforcing regular expression email validation, password complexity constraints, and displaying reactive inline error hints with red visual cues upon invalid submissions.
+
+### 🛠️ Key Concepts
+- **`GlobalKey<FormState>`**: Provides direct access to the `FormState` element to trigger `validate()`, `save()`, or `reset()`.
+- **Validation Callbacks (`validator`)**: Return `null` when input is valid, or a descriptive `String` error when constraints fail.
+- **`AutovalidateMode.onUserInteraction`**: Automatically re-evaluates rules on every keystroke after initial user interaction or first submit attempt.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp7_forms/exp7b_form_validation.dart`](lib/experiments/exp7_forms/exp7b_form_validation.dart)
+
+```dart
+// Snippet: Email Regex Validation
+TextFormField(
+  controller: _emailController,
+  decoration: const InputDecoration(labelText: 'Email Address'),
+  validator: (value) {
+    if (value == null || value.trim().isEmpty) return 'Email is required';
+    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    if (!emailRegex.hasMatch(value.trim())) {
+      return 'Please enter a valid email address';
+    }
+    return null;
+  },
+);
+
+// Triggering validation:
+if (_formKey.currentState!.validate()) {
+  // Succeeded
+}
+```
+
+### 🌐 Output Preview
+![Exp 7b Output](assets/outputs/exp7b_form_validation.svg)
+
+---
