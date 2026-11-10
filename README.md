@@ -217,3 +217,40 @@ LayoutBuilder(
 ![Exp 3a Output](assets/outputs/exp3a_responsive.svg)
 
 ---
+
+## Exp 3(b): Media Queries and Breakpoints
+
+### 🎯 Objective
+Implement adaptive responsive layouts using `MediaQuery` data to query screen geometry, pixel density, orientation, and establish responsive breakpoints that dynamically swap UI components (e.g., `NavigationRail` for desktop/tablet vs `NavigationBar` for mobile).
+
+### 🛠️ Key Concepts
+- **`MediaQuery.of(context)`**: Supplies device physical dimensions, orientation (`Orientation.portrait` / `Orientation.landscape`), and system inset paddings.
+- **Breakpoint Tiers**:
+  - **Mobile**: `< 600 dp` &rarr; Bottom navigation bar, full-width cards.
+  - **Tablet**: `600 dp - 1023 dp` &rarr; Compact sidebar rail, dual column.
+  - **Desktop / Web**: `>= 1024 dp` &rarr; Extended navigation rail, multi-pane dashboard.
+- **Adaptive Scaffolding**: Dynamically injects navigation widgets according to active viewport width.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp3_responsive/exp3b_media_queries.dart`](lib/experiments/exp3_responsive/exp3b_media_queries.dart)
+
+```dart
+// Snippet: Adaptive Scaffolding with MediaQuery Breakpoint
+final width = MediaQuery.of(context).size.width;
+final isMobile = width < 600;
+
+return Scaffold(
+  bottomNavigationBar: isMobile ? NavigationBar(destinations: destinations) : null,
+  body: Row(
+    children: [
+      if (!isMobile) NavigationRail(destinations: railDestinations, selectedIndex: selectedIdx),
+      Expanded(child: ResponsiveDashboardContent()),
+    ],
+  ),
+);
+```
+
+### 🌐 Output Preview
+![Exp 3b Output](assets/outputs/exp3b_breakpoints.svg)
+
+---
