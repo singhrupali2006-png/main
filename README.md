@@ -291,3 +291,40 @@ Navigator.pop(context, 'Confirmed Purchase of ITEM-9042');
 ![Exp 4a Output](assets/outputs/exp4a_navigator.svg)
 
 ---
+
+## Exp 4(b): Navigation with Named Routes
+
+### 🎯 Objective
+Implement structured, declarative routing across the Flutter application utilizing a central named routes table, dynamic route resolution via `onGenerateRoute`, type-safe argument deserialization, and wildcard 404 error routing.
+
+### 🛠️ Key Concepts
+- **`routes` Table**: Map of string path keys (`'/'`, `'/settings'`) to `WidgetBuilder` factory closures.
+- **`onGenerateRoute`**: Intercepts navigation transitions dynamically to inspect `RouteSettings.name` and unpack strongly-typed argument payloads (`RouteSettings.arguments as UserProfileArgs`).
+- **Web URL Synchronization**: In Flutter Web, named route paths seamlessly map to browser hash fragments (e.g. `#/profile`).
+- **404 Fallback**: Guarantees graceful degradation if users access undefined or obsolete URLs.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp4_navigation/exp4b_named_routes.dart`](lib/experiments/exp4_navigation/exp4b_named_routes.dart)
+
+```dart
+// Snippet: Declarative Routing & onGenerateRoute Dispatcher
+MaterialApp(
+  initialRoute: '/',
+  routes: {
+    '/': (context) => const HomeScreen(),
+    '/settings': (context) => const SettingsScreen(),
+  },
+  onGenerateRoute: (settings) {
+    if (settings.name == '/profile') {
+      final args = settings.arguments as UserProfileArgs;
+      return MaterialPageRoute(builder: (context) => ProfileScreen(args: args));
+    }
+    return MaterialPageRoute(builder: (context) => const NotFoundScreen());
+  },
+);
+```
+
+### 🌐 Output Preview
+![Exp 4b Output](assets/outputs/exp4b_named_routes.svg)
+
+---

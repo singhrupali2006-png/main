@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="exp4bHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87" />
+      <stop offset="100%" stop-color="#3b0764" />
+    </linearGradient>
+    <filter id="exp4bShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect x="20" y="15" width="810" height="490" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  
+  <!-- Browser Chrome Header -->
+  <path d="M 20 25 Q 20 15 30 15 L 820 15 Q 830 15 830 25 L 830 52 L 20 52 Z" fill="#e2e8f0" />
+  <circle cx="44" cy="34" r="6" fill="#ef4444" />
+  <circle cx="64" cy="34" r="6" fill="#f59e0b" />
+  <circle cx="84" cy="34" r="6" fill="#10b981" />
+  
+  <!-- URL Bar showing named route -->
+  <rect x="180" y="24" width="480" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="420" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569" text-anchor="middle">
+    🔒 http://localhost:8080/#/profile?user=RupaliSingh
+  </text>
+
+  <!-- Flutter App Bar -->
+  <rect x="20" y="52" width="810" height="46" fill="url(#exp4bHeaderGrad)" />
+  <text x="50" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#ffffff">
+    Exp 4(b): Declarative Named Routes Navigation &amp; Dynamic Argument Routing
+  </text>
+
+  <!-- Route Matrix Header -->
+  <rect x="50" y="112" width="750" height="34" rx="6" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1"/>
+  <text x="70" y="133" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="bold" fill="#6b21a8">
+    Active Route: '/profile' • Generator: onGenerateRoute(settings) • Type-safe Arguments: UserProfileArgs
+  </text>
+
+  <!-- Main Card Component: Profile Destination with Arguments -->
+  <g filter="url(#exp4bShadow)">
+    <rect x="225" y="160" width="400" height="310" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <!-- Profile Avatar -->
+    <circle cx="425" cy="225" r="38" fill="#f3e8ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="425" y="235" font-family="-apple-system, sans-serif" font-size="28" font-weight="bold" fill="#6b21a8" text-anchor="middle">R</text>
+
+    <!-- User Details from Arguments -->
+    <text x="425" y="285" font-family="-apple-system, sans-serif" font-size="18" font-weight="bold" fill="#0f172a" text-anchor="middle">Rupali Singh</text>
+    <text x="425" y="305" font-family="-apple-system, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">FullStack Mobile Engineer</text>
+    <line x1="265" y1="322" x2="585" y2="322" stroke="#f1f5f9" stroke-width="1.5"/>
+
+    <!-- Argument Extraction Readout -->
+    <rect x="255" y="335" width="340" height="55" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="270" y="354" font-family="Consolas, monospace" font-size="11" fill="#475569">settings.arguments as UserProfileArgs</text>
+    <text x="270" y="372" font-family="Consolas, monospace" font-size="11" fill="#059669">✓ username: "Rupali Singh" | role: "Engineer"</text>
+
+    <!-- Pop / Back Button -->
+    <rect x="335" y="410" width="180" height="36" rx="8" fill="#7e22ce"/>
+    <text x="425" y="432" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">⬅ Navigator.pop(context)</text>
+  </g>
+</svg>
