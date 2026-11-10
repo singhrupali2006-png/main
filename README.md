@@ -489,3 +489,40 @@ MaterialApp(
 ![Exp 6b Output](assets/outputs/exp6b_themes.svg)
 
 ---
+
+## Exp 7(a): Form with Various Input Fields
+
+### 🎯 Objective
+Design a multi-field input interface utilizing Flutter form components: text input fields with obscured characters, dropdown option pickers, numeric slider selectors, binary toggle switches, radio button groups, and checkbox agreements.
+
+### 🛠️ Key Concepts
+- **`Form` & `TextEditingController`**: Coordinates form validation cycles and manages live controller subscriptions to text mutations.
+- **Input Controls**:
+  - `TextFormField`: Multi-type text inputs supporting obscure passwords, auto-correct, and input formatters.
+  - `DropdownButtonFormField`: Select menus with custom option values.
+  - `Slider`: Continuous/discrete numeric value pickers.
+  - `SwitchListTile`, `RadioListTile`, `CheckboxListTile`: Boolean and enumerated selection widgets with built-in accessibility labels.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp7_forms/exp7a_form_inputs.dart`](lib/experiments/exp7_forms/exp7a_form_inputs.dart)
+
+```dart
+// Snippet: Diverse Form Inputs Setup
+Form(
+  key: _formKey,
+  child: Column(
+    children: [
+      TextFormField(controller: _emailController, keyboardType: TextInputType.emailAddress),
+      DropdownButtonFormField<String>(value: _selectedRole, items: _roles.map(...).toList()),
+      Slider(value: _experienceYears, min: 0, max: 15, onChanged: (v) => setState(() => _experienceYears = v)),
+      SwitchListTile(title: const Text('Notifications'), value: _notificationsEnabled, onChanged: ...),
+      CheckboxListTile(title: const Text('Accept Terms'), value: _termsAccepted, onChanged: ...),
+    ],
+  ),
+);
+```
+
+### 🌐 Output Preview
+![Exp 7a Output](assets/outputs/exp7a_form_inputs.svg)
+
+---
