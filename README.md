@@ -135,3 +135,45 @@ Container(
 ![Exp 2a Output](assets/outputs/exp2a_widgets.svg)
 
 ---
+
+## Exp 2(b): Implement Layouts (Row, Column, Stack)
+
+### 🎯 Objective
+Master structural layout paradigms in Flutter by arranging widgets linearly along horizontal (`Row`) and vertical (`Column`) axes, controlling flex factors (`Expanded`, `Flexible`), and compositing overlapping Z-index layers using `Stack` and `Positioned`.
+
+### 🛠️ Key Concepts
+- **`Row` & `Column`**: Linear layout engines. Control main and cross axis alignment via `MainAxisAlignment` (start, center, spaceBetween, spaceEvenly) and `CrossAxisAlignment`.
+- **`Expanded` vs `Flexible`**: `Expanded` forces a child to fill the remaining flex space, whereas `Flexible` allows a child to resize up to that boundary without occupying redundant room.
+- **`Stack` & `Positioned`**: Multi-layered widget ordering where later children render on top of earlier children. `Positioned` establishes absolute pin offsets (`top`, `bottom`, `left`, `right`).
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp2_widgets_layouts/exp2b_layouts.dart`](lib/experiments/exp2_widgets_layouts/exp2b_layouts.dart)
+
+```dart
+// Snippet: Layered Stack with Positioned Tag and Banner
+Stack(
+  children: [
+    Container(height: 180, decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.teal.shade800, Colors.teal.shade400]))),
+    Positioned(
+      top: 14,
+      right: 14,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        decoration: BoxDecoration(color: Colors.amber.shade400, borderRadius: BorderRadius.circular(20)),
+        child: const Text('FEATURED', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
+      ),
+    ),
+    Positioned(
+      bottom: 0,
+      left: 0,
+      right: 0,
+      child: Container(color: Colors.black.withOpacity(0.55), padding: const EdgeInsets.all(14), child: Text('Layered Card', style: TextStyle(color: Colors.white))),
+    ),
+  ],
+)
+```
+
+### 🌐 Output Preview
+![Exp 2b Output](assets/outputs/exp2b_layouts.svg)
+
+---
