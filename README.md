@@ -401,3 +401,54 @@ Consumer<CartNotifier>(
 ![Exp 5b Output](assets/outputs/exp5b_provider.svg)
 
 ---
+
+## Exp 6(a): Custom Widgets
+
+### 🎯 Objective
+Architect modular, testable, and reusable custom Flutter widgets to promote DRY (Don't Repeat Yourself) design principles, parameterizing visual tokens, icons, typography, and event closures across atomic components.
+
+### 🛠️ Key Concepts
+- **Component Decomposition**: Extracting repeated visual hierarchies into dedicated `StatelessWidget` / `StatefulWidget` classes.
+- **Custom Composited Elements**:
+  - `CustomAvatarBadge`: User avatar with presence dot overlaid via `Stack` & `Positioned`.
+  - `CustomMetricCard`: Analytics card encapsulating delta indicators, color tokens, and elevation.
+  - `CustomGradientButton`: Touch-reactive button with ink ripples (`InkWell`) and multi-stop linear gradients.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp6_custom_styling/exp6a_custom_widgets.dart`](lib/experiments/exp6_custom_styling/exp6a_custom_widgets.dart)
+
+```dart
+// Snippet: Custom Reusable Gradient Button
+class CustomGradientButton extends StatelessWidget {
+  final String text;
+  final IconData icon;
+  final List<Color> gradientColors;
+  final VoidCallback onPressed;
+
+  const CustomGradientButton({super.key, required this.text, required this.icon, required this.gradientColors, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(colors: gradientColors),
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [BoxShadow(color: gradientColors.first.withOpacity(0.35), blurRadius: 10)],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: onPressed,
+          child: Padding(padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14), child: Text(text, style: const TextStyle(color: Colors.white))),
+        ),
+      ),
+    );
+  }
+}
+```
+
+### 🌐 Output Preview
+![Exp 6a Output](assets/outputs/exp6a_custom_widgets.svg)
+
+---
