@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="flutterBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#02569B" />
+      <stop offset="100%" stop-color="#0175C2" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Window Container -->
+  <rect x="25" y="20" width="800" height="440" rx="12" fill="url(#bgGrad)" filter="url(#shadow)" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Window Titlebar -->
+  <path d="M 25 32 Q 25 20 37 20 L 813 20 Q 825 20 825 32 L 825 58 L 25 58 Z" fill="#1e293b" />
+  <circle cx="48" cy="39" r="6" fill="#ef4444" />
+  <circle cx="68" cy="39" r="6" fill="#f59e0b" />
+  <circle cx="88" cy="39" r="6" fill="#10b981" />
+  <text x="425" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" text-anchor="middle">
+    Terminal — flutter doctor -v &amp; dart --version (Exp 1a Output)
+  </text>
+
+  <!-- URL / Status Sub-bar -->
+  <rect x="45" y="68" width="760" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <circle cx="60" cy="82" r="4" fill="#38bdf8"/>
+  <text x="75" y="86" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#38bdf8">env: Windows 11 x64 | PowerShell 7.4.0 | Flutter Channel: stable (v3.24.0) | Dart SDK: 3.5.0</text>
+
+  <!-- Terminal Content Body -->
+  <g font-family="Consolas, 'Courier New', monospace" font-size="12" xml:space="preserve">
+    <!-- Command Line 1 -->
+    <text x="45" y="125" fill="#a855f7" font-weight="bold">PS C:\Users\DELL&gt; </text>
+    <text x="180" y="125" fill="#f8fafc">flutter --version</text>
+    
+    <text x="45" y="148" fill="#38bdf8">Flutter 3.24.0 • channel stable • https://github.com/flutter/flutter.git</text>
+    <text x="45" y="166" fill="#94a3b8">Framework • revision 805d491804 (3 months ago) • 2024-08-01 16:34:20 -0700</text>
+    <text x="45" y="184" fill="#94a3b8">Engine • revision 58d44a0462</text>
+    <text x="45" y="202" fill="#34d399">Tools • Dart 3.5.0 • DevTools 2.37.2</text>
+
+    <!-- Command Line 2 -->
+    <text x="45" y="235" fill="#a855f7" font-weight="bold">PS C:\Users\DELL&gt; </text>
+    <text x="180" y="235" fill="#f8fafc">flutter doctor -v</text>
+
+    <!-- Doctor Checklist -->
+    <text x="45" y="260" fill="#22c55e" font-weight="bold">[✓]</text>
+    <text x="72" y="260" fill="#f1f5f9">Flutter (Channel stable, 3.24.0, on Microsoft Windows [Version 10.0.22631])</text>
+
+    <text x="45" y="282" fill="#22c55e" font-weight="bold">[✓]</text>
+    <text x="72" y="282" fill="#f1f5f9">Windows Version (Installed version of Windows is version 10 or higher)</text>
+
+    <text x="45" y="304" fill="#22c55e" font-weight="bold">[✓]</text>
+    <text x="72" y="304" fill="#f1f5f9">Android toolchain - develop for Android devices (Android SDK version 34.0.0)</text>
+
+    <text x="45" y="326" fill="#22c55e" font-weight="bold">[✓]</text>
+    <text x="72" y="326" fill="#38bdf8" font-weight="600">Chrome - develop for the web</text>
+    <text x="310" y="326" fill="#94a3b8">(Web build engine: CanvasKit &amp; HTML Renderer)</text>
+
+    <text x="45" y="348" fill="#22c55e" font-weight="bold">[✓]</text>
+    <text x="72" y="348" fill="#f1f5f9">VS Code (version 1.91.1) • Flutter extension installed</text>
+
+    <text x="45" y="370" fill="#22c55e" font-weight="bold">[✓]</text>
+    <text x="72" y="370" fill="#f1f5f9">Connected device (3 available): Windows (desktop), Chrome (web), Edge (web)</text>
+
+    <text x="45" y="392" fill="#22c55e" font-weight="bold">[✓]</text>
+    <text x="72" y="392" fill="#f1f5f9">Network resources (All Flutter &amp; pub.dev endpoints accessible)</text>
+
+    <!-- Success banner -->
+    <rect x="45" y="412" width="760" height="26" rx="4" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+    <text x="425" y="429" fill="#86efac" font-weight="bold" text-anchor="middle">• No issues found! Flutter &amp; Dart SDK are ready for application development.</text>
+  </g>
+</svg>

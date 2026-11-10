@@ -1,0 +1,55 @@
+# Flutter & Dart Laboratory Experiments (10 Experiments • 20 Modules)
+
+[![Flutter](https://img.shields.io/badge/Flutter-3.24.0-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.5.0-0175C2?logo=dart&logoColor=white)](https://dart.dev)
+[![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Android%20%7C%20iOS%20%7C%20Desktop-4CAF50)]()
+[![Commits](https://img.shields.io/badge/GitHub%20Commits-20%20Verified%20Milestones-blueviolet)]()
+
+A comprehensive, production-grade Flutter and Dart laboratory suite encompassing **10 core experiments** divided into **20 discrete sub-modules**. Each module includes full source code, theoretical architecture, line-by-line breakdown, testing verification, and **high-fidelity website outputs** rendered for web browser viewports.
+
+---
+
+## 📑 Table of Contents
+
+| Experiment | Title | Description | Sub-Modules |
+| :--- | :--- | :--- | :--- |
+| **Exp 1** | **SDK Setup & Dart Basics** | Installation, toolchain verification, and Dart language fundamentals | [1(a)](#exp-1a-install-flutter-and-dart-sdk) • [1(b)](#exp-1b-dart-language-basics) |
+| **Exp 2** | **Core Widgets & Layouts** | Text, Image, Container, Row, Column, and Stack positioning | [2(a)](#exp-2a-explore-flutter-widgets-text-image-container) • [2(b)](#exp-2b-implement-layouts-row-column-stack) |
+| **Exp 3** | **Responsive Design** | Dynamic UI layout adaptations and MediaQuery breakpoint engines | [3(a)](#exp-3a-responsive-ui-design) • [3(b)](#exp-3b-media-queries-and-breakpoints) |
+| **Exp 4** | **Navigation & Routing** | Imperative Navigator routing and declarative named routes with arguments | [4(a)](#exp-4a-navigation-between-screens) • [4(b)](#exp-4b-navigation-with-named-routes) |
+| **Exp 5** | **Widget State & Provider** | StatelessWidget vs StatefulWidget and reactive Provider state management | [5(a)](#exp-5a-statelesswidget-and-statefulwidget) • [5(b)](#exp-5b-state-management-with-setstate-and-provider) |
+| **Exp 6** | **Custom Widgets & Theming**| Reusable modular UI elements and Material 3 theme customization | [6(a)](#exp-6a-custom-widgets) • [6(b)](#exp-6b-themes-and-custom-styling) |
+| **Exp 7** | **Interactive Forms** | Complex inputs, regex validation, and error handling | [7(a)](#exp-7a-form-with-various-input-fields) • [7(b)](#exp-7b-form-validation-and-error-handling) |
+| **Exp 8** | **Animations Framework** | Explicit animation controllers, tween curves, fade, and slide transitions | [8(a)](#exp-8a-ui-animations-framework) • [8(b)](#exp-8b-fade-and-slide-transitions) |
+| **Exp 9** | **REST API Integration** | HTTP client networking, JSON serialization, and FutureBuilder UI | [9(a)](#exp-9a-fetch-data-from-rest-api) • [9(b)](#exp-9b-display-fetched-data-in-ui) |
+| **Exp 10** | **Testing & Debugging** | Unit & widget tests, DevTools profiling, and issue resolution | [10(a)](#exp-10a-unit-tests-for-ui-components) • [10(b)](#exp-10b-flutter-debugging-tools) |
+
+---
+
+## Exp 1(a): Install Flutter and Dart SDK
+
+### 🎯 Objective
+Set up the Flutter and Dart SDK development environment on the local machine, configure environment variables (`PATH`), configure web target platform, and verify setup integrity using `flutter doctor`.
+
+### 🛠️ Key Concepts
+- **Flutter SDK**: Portable UI toolkit for compiling natively to Web (CanvasKit/HTML), Android, iOS, Windows, macOS, and Linux.
+- **Dart SDK**: Standalone virtual machine, AOT compiler, and standard library powering Flutter.
+- **`flutter doctor`**: Diagnostic tool that validates local toolchain dependencies (Android SDK, Chrome browser, Visual Studio toolchain, IDE plugins).
+
+### 💻 Execution & Verification Commands
+```bash
+# 1. Automated installation via script (Windows PowerShell)
+.\scripts\install_flutter.ps1
+
+# 2. Check installed versions
+flutter --version
+dart --version
+
+# 3. Comprehensive diagnostic check
+flutter doctor -v
+```
+
+### 🌐 Output Preview
+![Exp 1a Output](assets/outputs/exp1a_flutter_install.svg)
+
+---
