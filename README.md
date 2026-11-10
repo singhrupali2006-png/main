@@ -53,3 +53,42 @@ flutter doctor -v
 ![Exp 1a Output](assets/outputs/exp1a_flutter_install.svg)
 
 ---
+
+## Exp 1(b): Dart Language Basics
+
+### 🎯 Objective
+Understand core syntax and language constructs of Dart, including strong typing, type inference, control flow structures, functional parameters, mixins, object-oriented principles (inheritance, encapsulation), and asynchronous `Future` programming.
+
+### 🛠️ Key Concepts
+- **Type Safety & Sound Null Safety**: Static type checking prevents runtime null reference errors.
+- **Object-Oriented Programming**: Everything in Dart is an object inheriting from `Object?`. Supports single inheritance and composition via Mixins (`with LoggerMixin`).
+- **Encapsulation**: Leading underscore `_gpa` creates library-private fields with getter/setter control.
+- **Asynchronous Primitives**: `Future`, `async`, and `await` handle non-blocking asynchronous operations.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp1_dart_basics/dart_basics.dart`](lib/experiments/exp1_dart_basics/dart_basics.dart)
+
+```dart
+// Snippet: Mixin & OOP Inheritance in Dart
+mixin LoggerMixin {
+  void log(String message) => print('[LOG] $message');
+}
+
+class Student extends Person with LoggerMixin {
+  final String studentId;
+  double _gpa;
+
+  Student({required super.name, required super.age, required this.studentId, double initialGpa = 3.8})
+      : _gpa = initialGpa;
+
+  double get gpa => _gpa;
+  set gpa(double value) {
+    if (value >= 0.0 && value <= 4.0) _gpa = value;
+  }
+}
+```
+
+### 🌐 Output Preview
+![Exp 1b Output](assets/outputs/exp1b_dart_basics.svg)
+
+---
