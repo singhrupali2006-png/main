@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="exp8aHeaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87" />
+      <stop offset="100%" stop-color="#3b0764" />
+    </linearGradient>
+    <linearGradient id="exp8aBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9333ea" />
+      <stop offset="50%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="exp8aGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="16" flood-color="#a855f7" flood-opacity="0.6"/>
+    </filter>
+    <filter id="exp8aShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Browser Frame -->
+  <rect x="20" y="15" width="810" height="490" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+  
+  <!-- Browser Chrome Header -->
+  <path d="M 20 25 Q 20 15 30 15 L 820 15 Q 830 15 830 25 L 830 52 L 20 52 Z" fill="#e2e8f0" />
+  <circle cx="44" cy="34" r="6" fill="#ef4444" />
+  <circle cx="64" cy="34" r="6" fill="#f59e0b" />
+  <circle cx="84" cy="34" r="6" fill="#10b981" />
+  
+  <!-- URL Bar -->
+  <rect x="180" y="24" width="480" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="420" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#475569" text-anchor="middle">
+    🔒 http://localhost:8080/#/exp8a-animations
+  </text>
+
+  <!-- Flutter App Bar -->
+  <rect x="20" y="52" width="810" height="46" fill="url(#exp8aHeaderGrad)" />
+  <text x="50" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="600" fill="#ffffff">
+    Exp 8(a): Flutter Animation Framework (AnimationController &amp; AnimatedBuilder)
+  </text>
+
+  <!-- Main Animation Canvas Card -->
+  <g filter="url(#exp8aShadow)">
+    <rect x="135" y="115" width="580" height="370" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    
+    <text x="425" y="145" font-family="-apple-system, sans-serif" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">
+      Explicit Multi-Property Animation
+    </text>
+    <text x="425" y="165" font-family="-apple-system, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">
+      Tween&lt;double&gt; with CurvedAnimation(Curves.easeInOutCubic)
+    </text>
+
+    <!-- Animated Glowing Cube Graphic -->
+    <g transform="translate(425, 255) rotate(18) scale(1.1)">
+      <rect x="-60" y="-60" width="120" height="120" rx="26" fill="url(#exp8aBoxGrad)" filter="url(#exp8aGlow)"/>
+      <polygon points="0,-25 15,0 35,5 20,20 25,40 0,28 -25,40 -20,20 -35,5 -15,0" fill="#ffffff" fill-opacity="0.9"/>
+    </g>
+
+    <!-- Progress Timeline Bar -->
+    <rect x="175" y="355" width="500" height="8" rx="4" fill="#f3e8ff"/>
+    <rect x="175" y="355" width="375" height="8" rx="4" fill="#9333ea"/>
+    <circle cx="550" cy="359" r="7" fill="#7e22ce" stroke="#ffffff" stroke-width="2"/>
+    <text x="425" y="380" font-family="Consolas, monospace" font-size="11" font-weight="bold" fill="#6b21a8" text-anchor="middle">
+      Timeline Progress: 75% • Status: FORWARD • Duration: 1800ms
+    </text>
+
+    <!-- Control Buttons -->
+    <rect x="175" y="405" width="110" height="34" rx="8" fill="#7e22ce"/>
+    <text x="230" y="427" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">▶ Forward</text>
+
+    <rect x="305" y="405" width="110" height="34" rx="8" fill="#7e22ce"/>
+    <text x="360" y="427" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">◀ Reverse</text>
+
+    <rect x="435" y="405" width="110" height="34" rx="8" fill="#581c87"/>
+    <text x="490" y="427" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle">🔁 Loop</text>
+
+    <rect x="565" y="405" width="110" height="34" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="620" y="427" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">⏹ Stop</text>
+  </g>
+</svg>

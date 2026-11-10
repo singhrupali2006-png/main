@@ -565,3 +565,39 @@ if (_formKey.currentState!.validate()) {
 ![Exp 7b Output](assets/outputs/exp7b_form_validation.svg)
 
 ---
+
+## Exp 8(a): UI Animations Framework
+
+### 🎯 Objective
+Construct explicit animations using Flutter’s `AnimationController`, configure easing curves with `CurvedAnimation`, and optimize rendering efficiency using `AnimatedBuilder` to manipulate scale, rotation, and elevation without whole-tree rebuilds.
+
+### 🛠️ Key Concepts
+- **`SingleTickerProviderStateMixin`**: Binds the animation controller to the device display refresh rate (~60/120 Hz) via a `Ticker`.
+- **`AnimationController`**: Controls playback state (`forward()`, `reverse()`, `repeat()`, `stop()`) over specified durations.
+- **`CurvedAnimation`**: Applies non-linear easing mathematics (`Curves.easeInOutCubic`).
+- **`AnimatedBuilder`**: Re-executes only its specific `builder` callback on tick notifications, keeping parent widget trees static.
+
+### 💻 Dart Source Code Reference
+File: [`lib/experiments/exp8_animations/exp8a_basic_animation.dart`](lib/experiments/exp8_animations/exp8a_basic_animation.dart)
+
+```dart
+// Snippet: Animation Controller & AnimatedBuilder Setup
+_controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 1800));
+final curved = CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic);
+_scaleAnimation = Tween<double>(begin: 0.85, end: 1.15).animate(curved);
+
+AnimatedBuilder(
+  animation: _controller,
+  builder: (context, child) {
+    return Transform.scale(
+      scale: _scaleAnimation.value,
+      child: Container(width: 120, height: 120, decoration: BoxDecoration(borderRadius: BorderRadius.circular(28))),
+    );
+  },
+);
+```
+
+### 🌐 Output Preview
+![Exp 8a Output](assets/outputs/exp8a_animation.svg)
+
+---
